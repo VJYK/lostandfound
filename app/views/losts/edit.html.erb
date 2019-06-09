@@ -1,0 +1,10 @@
+<h2>Edit items</h2>
+<%= form_for @lost do |f| %>
+	<p><%= f.label :item_name %>
+	   <%= f.text_field :item_name%></p>
+	<p><%= f.label :item_desc %>
+		<%= f.text_area :item_desc%>	
+	</p>
+	<p><%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => "Select One"} %><br/></p>
+	<p><%= f.submit "Add Item"%></p>
+<%end%>

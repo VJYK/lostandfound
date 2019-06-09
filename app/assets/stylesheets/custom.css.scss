@@ -1,0 +1,23 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.my-class{
+    margin-top:15px;
+	background-color: gray;
+	color:white;
+}
+
+.my-class h2{
+    margin-top: 5px;
+	border-bottom: 2px solid white;
+}
+
+.my-head h2{
+    margin-top: 5px;
+	color: #6b9eef;
+}
+
+.img{
+	background-color: gray;
+}

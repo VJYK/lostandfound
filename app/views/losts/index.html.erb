@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+<h2 align="center">Report Lost Item</h2>
+
+	<% @losts.each do |lost|%>
+	<div class="well">
+    <small>Posted at : <%= lost.created_at.strftime("%b %d. %Y") %></small>
+	<h3>ItemName : <%= lost.item_name %></h3>
+
+	<p>Description : <%= lost.item_desc %> </p>
+	</div>
+	
+<%end%>
+ <%= will_paginate @losts %>
+</div>
+</div>

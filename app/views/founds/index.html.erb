@@ -1,0 +1,15 @@
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+<h2 align="center">Report Found Item</h2>
+<% @founds.each do |found|%>
+<div class="well">
+    <small>Posted at : <%= found.created_at.strftime("%b %d. %Y") %></small>
+    
+	<h3>ItemName : <%= found.item_name %></h3>
+
+	<p>Description : <%= found.item_desc %> </p>
+</div>
+<%end%>	
+<%= will_paginate @losts %>
+</div>
+</div>	
