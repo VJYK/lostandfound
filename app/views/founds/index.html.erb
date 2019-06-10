@@ -4,10 +4,12 @@
 <% @founds.each do |found|%>
 <div class="well">
     <small>Posted at : <%= found.created_at.strftime("%b %d. %Y") %></small>
+    <small style="float:right"> Reported By : <%= found.user.username %></small>
     
 	<h3>ItemName : <%= found.item_name %></h3>
 
 	<p>Description : <%= found.item_desc %> </p>
+	<p>Return at : <%= found.return %></p>
 </div>
 <%end%>	
 <%= will_paginate @losts %>

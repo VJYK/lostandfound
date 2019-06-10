@@ -7,8 +7,10 @@
 	<p><%= f.label :item_desc %>
 		<%= f.text_area(:item_desc,{:class => 'form-control'})%>	
 	</p>
-	<p><%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => "Select One"} %>
-		<br/></p>
+	<p><%= f.label :return %>
+		<%= f.text_field(:return, {:class => 'form-control'})%>
+	</p>
+	<p><%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => "Select One"} %><br/></p>
 	<p><%= f.submit({:class => 'btn btn-primary'})%></p>
 <%end%>
 </div>

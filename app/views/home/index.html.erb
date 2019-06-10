@@ -1,12 +1,12 @@
 <div class="text-center my-head">
 <h2 style="border-bottom: 1px solid #6b9eef;">LOST AND FOUND NITC PORTAL</h2>
 <div class="container">
-  
+  <% if user_signed_in? %>
    <div class="row">
    	<div class="col-sm-6"><%= link_to "Show Lost Item", losts_path, class: "btn btn-xs btn-primary"%></div>
     <div class="col-sm-6"><%= link_to "Show Found Item", founds_path,class: "btn btn-xs btn-primary" %></div>
   </div>
- 
+ <%end%>
 </div>
  </div>
 <hr>

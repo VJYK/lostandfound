@@ -14,7 +14,6 @@ class LostsController < ApplicationController
 	def create
   		@lost = Lost.new(lost_params)
   	  @lost.user = current_user
-  		
   		if @lost.save
   			flash[:notice] = "Reported was successfully created"
   			redirect_to losts_path, :notice => "Your post has be saved"
