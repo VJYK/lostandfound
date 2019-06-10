@@ -9,8 +9,7 @@ default: &default
   database: nitcportal
   username: webportal
   password: 123456
-  
-  
+
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
@@ -20,6 +19,7 @@ development:
   database: nitcportal
   username: webportal
   password: 123456
+
   timeout: 5000
 
  
@@ -33,6 +33,7 @@ test:
   database: nitcportal
   username: webportal
   password: 123456
+
   timeout: 5000
 
   
@@ -41,6 +42,7 @@ test:
   database: nitcportal
   username: webportal
   password: 123456
+
   timeout: 5000
  
   
