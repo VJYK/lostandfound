@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
 <h2 align="center">Report Lost Item</h2>
-	<%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name") %>
+	
 	<% @losts.each do |lost|%>
 	<div class="well">
     <small>Reported at : <%= lost.created_at.strftime("%b %d. %Y") %></small>
