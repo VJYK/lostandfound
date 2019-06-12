@@ -1,5 +1,9 @@
 {
   "name": "project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.33.0",
+    "webpack-dev-server": "^3.7.1"
+  }
 }
