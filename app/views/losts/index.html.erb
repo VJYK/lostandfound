@@ -1,7 +1,16 @@
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
-<h2 align="center">Report Lost Item</h2>
-	
+   <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role= "button" aria-expanded="false">Sort by Category : <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <% Category.all.each do |category|%>
+        <li><%= link_to category.name, losts_path(category: category.name),class: "link"%></li>
+        <%end%>
+      </ul>
+    </li>
+   <h2 align="center">Report Lost Item</h2>
+
+
 	<% @losts.each do |lost|%>
 	<div class="well">
     <small>Reported at : <%= lost.created_at.strftime("%b %d. %Y") %></small>
@@ -13,6 +22,5 @@
 	</div>
 	
 <%end%>
- <%= will_paginate @losts %>
 </div>
 </div>

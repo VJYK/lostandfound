@@ -2,17 +2,23 @@ class LostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
     
 	def index
-	   @losts = Lost.all.order("created_at DESC").paginate(page: params[:page], per_page: 3)
-	end
+    if params[:category].blank?
+	   @losts = Lost.all.order("created_at DESC")
+    else
+      @category_id =Category.find_by(name: params[:category]).id
+      @losts = Lost.where(:category_id => @category_id).order("created_at DESC")
+    end
+  
+  end
 
 	def new
-		@lost = Lost.new
-		@category = Category.all
+		@lost = current_user.losts.build
+		@category = Category.all.map { |c| [c.name, c.id] }
 	end
 
 	
 	def create
-  		@lost = Lost.new(lost_params)
+  		@lost = current_user.losts.build(lost_params)
   	  @lost.user = current_user
   		if @lost.save
   			flash[:notice] = "Reported was successfully created"
