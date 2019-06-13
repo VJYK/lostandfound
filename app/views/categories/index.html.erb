@@ -1,0 +1,7 @@
+<h1><%= @category.name %></h1>
+	<% if @losts.each do |lost| %>
+	<h3><%= link_to lost.item_name, lost %></h3>
+	<p><%= lost.item_desc%></p>
+	<% end.empty?%>
+	<p>Sorry, there are no report in this category</p>
+<%end%>

@@ -1,0 +1,8 @@
+<% @losts.each do |lost|%>
+	<h3><%= link_to lost.item_name,lost %></h3>
+     <p><%= lost.item_desc %></p>
+<%end%>
+<% @founds.each do |found|%>
+	<h3><%= link_to found.item_name,found %></h3>
+     <p><%= found.item_desc %></p>
+<%end%>
